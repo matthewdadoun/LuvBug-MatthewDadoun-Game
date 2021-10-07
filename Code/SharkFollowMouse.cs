@@ -6,13 +6,8 @@ public class SharkFollowMouse : MonoBehaviour
 {
     private Vector3 mousePosition;
     public float moveSpeed = 10f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    // follows the mouse on the x position
     void Update()
     {
         mousePosition.x = Input.mousePosition.x;

@@ -12,7 +12,6 @@ public class DeployFish : MonoBehaviour {
     int scoreAmount; 
     public TextMeshProUGUI scoreDisplay; 
 
-    // Start is called before the first frame update
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
@@ -21,6 +20,7 @@ public class DeployFish : MonoBehaviour {
         Screen.SetResolution(1024, 768, false);
     }
 
+    //gets called every second to spawn a fish
     private void spawnFish()
     {
         GameObject a = Instantiate(fishPrefab) as GameObject;
@@ -28,6 +28,7 @@ public class DeployFish : MonoBehaviour {
         a.transform.position = new Vector2(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * -2);
     }
 
+    //the function which spawns the fish
     IEnumerator FishWave()
     {
         while (true)
@@ -37,9 +38,4 @@ public class DeployFish : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

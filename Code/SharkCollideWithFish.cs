@@ -7,12 +7,13 @@ public class SharkCollideWithFish : MonoBehaviour
 {
     int score;
     public TextMeshProUGUI scoreText;
-    // Start is called before the first frame update
+
     void Start()
     {
         score = 0;
     }
 
+    //when the shark collides with the fish, it deletes the fish and adds 1 point
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("hit detected");
@@ -20,7 +21,8 @@ public class SharkCollideWithFish : MonoBehaviour
         score++;
     }
 
-    // Update is called once per frame
+
+    //updates the score amount on the text
     void Update()
     {
         scoreText.text = score.ToString();
